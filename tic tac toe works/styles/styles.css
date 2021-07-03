@@ -1,0 +1,146 @@
+@import url(https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@100;200;300;400;500;600;800&display=swap);
+
+body {
+  font-family: "Merriweather Sans", sans-serif;
+  background-color: azure;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Merriweather Sans", sans-serif;
+  color: #86594c;
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.wrapper {
+  height: 100vh;
+  min-height: 800px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.left {
+  margin-right: 60px;
+}
+
+.restart {
+  width: 175px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 2px #4c6986;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.restart:hover {
+  background-color: #4c6986;
+  color: aqua;
+}
+
+.header {
+  display: flex;
+  color: #9a9a9a;
+  font-size: 24px;
+}
+
+.header .playerX {
+  flex: 1;
+  border-bottom: 5px solid #eee;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.header .playerO {
+  flex: 1;
+  border-bottom: 5px solid rgb(238, 238, 238);
+  text-align: center;
+}
+
+.playerX.active {
+  color: #42bed7;
+  border-color: #42bed7;
+}
+
+.tile-x {
+  color: #42bed7;
+}
+
+.playerO.active {
+  color: #d7bafb;
+  border-color: #d7bafb;
+}
+
+.tile-o {
+  color: #edfbba;
+}
+
+.tile-winner span {
+  color: #4ac269;
+}
+
+.game {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 0;
+  flex-grow: 1;
+  padding: 10px;
+  max-width: 100%;
+}
+
+.board-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  background-color: rgba(16, 13, 218, 0.164);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.board-tile:hover {
+  background-color: rgba(238, 238, 238, 0.933);
+}
+
+.board-tile:not(:nth-child(3n)) {
+  border-right: 3px solid rgba(137, 163, 189, 0.58);
+}
+
+.board-tile:not(:nth-last-child(-n + 3)) {
+  border-bottom: 3px solid rgba(137, 163, 189, 0.58);
+}
+
+@media screen and (max-width: 981px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .left {
+    margin-bottom: 30px;
+  }
+}
